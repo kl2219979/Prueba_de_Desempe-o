@@ -1,11 +1,12 @@
 # ---- funtionalities sistem ------
+from validations import *
 
 def add_new_student():
-    id = 0
-    name = 0
-    age = 0
-    curso = 0
-    status = 0
+    id = validation_id()
+    name = validation_name()
+    age = validation_age()
+    curso = validation_curso()
+    status = validation_status()
     return {
         "ID":id,
         "Name":name,
