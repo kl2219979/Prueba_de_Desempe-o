@@ -23,12 +23,12 @@ def create_data_student(data_student):
     data_students.append(data_student)
     add_data_students(data_students)
 
-def update_data_student(name_value,name,new_data_student):
+def update_data_student(name_value,name,add_new_student):
     # search and update data student
     data_students = read_data_students()
     for student in data_students:
         if student.get(name) == name_value:
-            student.update(new_data_student)
+            student.update(add_new_student)
             add_data_students(student)
             return True
     return False
