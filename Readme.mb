@@ -1,0 +1,28 @@
+# Prueba de desempeño - Sistema de gestion de Estudiantes
+
+## Estructura
+
+* data -> data.json
+* main.py
+* menu.py
+* _pycache__
+* README.mb
+* services.py
+* services_file.py
+* validations-py
+
+este programa se conforma por una carpeta data donde se ubica un archivo data.json que nos permite la persistencia de los datos en nuestro sistema, el archivo main que es el punto de inicio, el archivo menu que es donde nos encargamos de tener el menu interactivo, services_file donde estan las funcionalidades corespondientes con el archivo, el archivo services donde estan las funcionalidades del menu y por ultimo el archivo validations donde nos encargamos de filtrar los datos que entran a nuestro sistema.
+
+### Como funciona
+el programa cuando se inicia muestra en pantalla un menu interactido donde puedes agregar estudiantes nuevos, listarlos, buscarlos por su nombre, modificarlos relizando la busqueda por su nombre y eliminarlos tambien realizando la busqueda con su nombre, si el usuario se equivoca a la hora de ingresar lo que se le esta solicitando el programa le indica donde se equivoco y reliza la pregunta de nuevo hasta que el usuario ingrese el dato deseado.
+
+### Tipo de estructura de datos 
+en el programa manejamos una lista ordenada de diccionarios, donde cada diccionario representa un estudiantes estos diccionarios se conformar de la siguiente manera.
+
+Estudiante = {
+        "ID":id,
+        "Name":name,
+        "Age":age,
+        "Curso":curso,
+        "Status":status
+    }
