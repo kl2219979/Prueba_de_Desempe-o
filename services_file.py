@@ -1,5 +1,6 @@
 import json # archivo tipo lista de diccionarios ordenada
 import os # manejo de carpetas y archivos
+from validations import *
 
 CARPETA_DATA = "data"
 ARCHIVO_JSON = os.path.join(CARPETA_DATA, "data.json") # ruta ára acceder al archivo json
@@ -23,23 +24,30 @@ def create_data_student(data_student):
     data_students.append(data_student)
     add_data_students(data_students)
 
-def update_data_student(name_value,name,add_new_student):
+def update_data_student(name_value):
     # search and update data student
     data_students = read_data_students()
+    
     for student in data_students:
-        if student.get(name) == name_value:
-            student.update(add_new_student)
-            add_data_students(student)
+        # no me dejo otra opcion si no era asi se me rompia el programa
+        if student['Name']== name_value:
+            student['ID'] = student['ID']
+            student['Name'] = validation_name()
+            student['Age'] = validation_age()
+            student['Curso'] = validation_curso()
+            student['status'] = validation_status()
+            add_data_students(data_students)
             return True
     return False
+    
 
-def remove_data_student(name_value, name):
+def remove_data_student(name_value):
     # serach and remove data student
     data_students = read_data_students()
     update_data_students = []
     remove = False
     for student in data_students:
-        if student.get(name) == name_value:
+        if student['Name'] == name_value:
             remove = True
         else:
             update_data_students.append(student)
